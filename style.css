@@ -1,0 +1,183 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Header & Dropdown Navigation */
+header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+}
+
+/* Dropdown specific styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.dropdown-content li a {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdown-content li a:hover {
+    background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Layout & Cards */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.game-card h3 {
+    margin: 1rem 0 0.5rem 0;
+}
+
+.game-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.play-btn {
+    background-color: #00adb5;
+    color: white;
+}
+
+.play-btn:hover {
+    background-color: #007e85;
+}
+
+.view-btn {
+    background-color: #393e46;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #22252a;
+}
+
+/* Single Game Page Specifics */
+.game-detail {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.game-detail img {
+    max-width: 300px;
+    border-radius: 6px;
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.instructions {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-left: 4px solid #00adb5;
+    margin: 1.5rem 0;
+}
