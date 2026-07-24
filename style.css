@@ -1,59 +1,76 @@
-/* Base styles */
+/* Base styles & Variables */
+:root {
+    --bg-dark: #0b0b0f;
+    --bg-panel: #12121a;
+    --bg-card: #1a1a26;
+    --accent-purple: #7b2cbf;
+    --accent-glow: #9d4edd;
+    --text-light: #f3f4f6;
+    --text-gray: #9ca3af;
+    --border-color: #2a2a3a;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    scroll-behavior: smooth; 
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    padding-bottom: 60px;
 }
 
 /* Header & Dropdown Navigation */
 header {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1rem 2rem;
-    position: sticky;
+    background-color: rgba(18, 18, 26, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem 2rem;
 }
 
 .logo {
-    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+    text-transform: uppercase;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     gap: 1.5rem;
     align-items: center;
 }
 
-nav ul li a {
-    color: #fff;
+nav a {
+    color: var(--text-gray);
     text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    display: block;
+    font-size: 0.95rem;
 }
 
-nav ul li a:hover {
-    color: #00adb5;
+nav a:hover {
+    color: var(--accent-glow);
 }
 
-/* Dropdown specific styles */
+/* Dropdown Menu Styles */
 .dropdown {
     position: relative;
 }
@@ -63,33 +80,37 @@ nav ul li a:hover {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #222;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
+    background-color: var(--bg-panel);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.4);
+    z-index: 1000;
     list-style: none;
-    padding: 0;
-    border-radius: 4px;
+    padding: 0.5rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
 }
 
 .dropdown-content li a {
-    padding: 10px 15px;
+    padding: 0.5rem 1rem;
+    display: block;
+    color: var(--text-gray);
     white-space: nowrap;
 }
 
 .dropdown-content li a:hover {
-    background-color: #333;
+    background-color: var(--bg-card);
+    color: var(--accent-glow);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Main Layout & Cards */
+/* Layout & Cards */
 .container {
     max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: 0 auto;
+    padding: 5rem 2rem 2rem;
 }
 
 .games-grid {
@@ -99,10 +120,10 @@ nav ul li a:hover {
 }
 
 .game-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -110,18 +131,22 @@ nav ul li a:hover {
 
 .game-card img {
     width: 100%;
-    height: auto;
-    border-radius: 6px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
 }
 
 .game-card h3 {
-    margin: 1rem 0 0.5rem 0;
+    color: var(--accent-glow);
+    margin-bottom: 1rem;
 }
 
 .game-card p {
-    color: #666;
+    color: var(--text-gray);
     font-size: 0.95rem;
-    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 /* Button Group */
@@ -134,50 +159,52 @@ nav ul li a:hover {
 .btn {
     flex: 1;
     text-align: center;
-    padding: 0.75rem 1rem;
-    border-radius: 4px;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
 }
 
 .play-btn {
-    background-color: #00adb5;
+    background: var(--accent-purple);
     color: white;
 }
 
 .play-btn:hover {
-    background-color: #007e85;
+    background: var(--accent-glow);
 }
 
 .view-btn {
-    background-color: #393e46;
-    color: white;
+    background-color: var(--border-color);
+    color: var(--text-light);
 }
 
 .view-btn:hover {
-    background-color: #22252a;
+    background-color: var(--accent-purple);
 }
 
 /* Single Game Page Specifics */
 .game-detail {
-    background: #fff;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-radius: 12px;
 }
 
 .game-detail img {
     max-width: 300px;
-    border-radius: 6px;
+    border-radius: 10px;
     float: left;
     margin-right: 2rem;
     margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
 }
 
 .instructions {
-    background: #f9f9f9;
+    background: var(--bg-dark);
     padding: 1rem;
-    border-left: 4px solid #00adb5;
+    border-left: 3px solid var(--accent-purple);
+    border-radius: 8px;
     margin: 1.5rem 0;
 }
