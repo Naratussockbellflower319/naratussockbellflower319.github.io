@@ -1,0 +1,366 @@
+<?php
+// Nocturnal Gaming - Official Website Template for InfinityFree
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nocturnal Gaming</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <style>
+        :root {
+            --bg-dark: #0b0b0f;
+            --bg-panel: #12121a;
+            --bg-card: #1a1a26;
+            --accent-purple: #7b2cbf;
+            --accent-glow: #9d4edd;
+            --text-light: #f3f4f6;
+            --text-gray: #9ca3af;
+            --border-color: #2a2a3a;
+        }
+        .game-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+        
+        .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 6px;
+}
+
+.game-card h3 {
+    color: var(--accent-glow);
+    margin-bottom: 1rem;
+}
+
+.game-card p {
+    margin-bottom: 1rem;
+}
+
+.game-card .instructions {
+    background: var(--bg-dark);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border-left: 3px solid var(--accent-purple);
+}
+        
+        .contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-gray);
+}
+        
+        #contact {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+        
+        #games {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.form-group input,
+.form-group textarea {
+    border-radius: 6px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-glow);
+}
+
+.play-button {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--accent-purple);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.play-button:hover {
+    background: var(--accent-glow);
+}
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--text-light); font-family: sans-serif; line-height: 1.6; padding-bottom: 60px; }
+        header { background-color: rgba(18, 18, 26, 0.95); border-bottom: 1px solid var(--border-color); position: fixed; top: 0; width: 100%; z-index: 1000; backdrop-filter: blur(10px); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-light); text-decoration: none; text-transform: uppercase; }
+        nav ul { display: flex; list-style: none; gap: 1.5rem; }
+        nav a { color: var(--text-gray); text-decoration: none; font-size: 0.95rem; }
+        nav a:hover { color: var(--accent-glow); }
+        .hero { padding: 10rem 2rem 6rem; text-align: center; background: radial-gradient(circle at top, #240046 0%, var(--bg-dark) 70%); border-bottom: 1px solid var(--border-color); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem 2rem; }
+        section { margin-bottom: 6rem; }
+        .games-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .game-card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; }
+        .legal-box { background-color: var(--bg-panel); border: 1px solid var(--border-color); border-radius: 8px; padding: 2.5rem; max-height: 500px; overflow-y: auto; }
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-form { background-color: var(--bg-panel); border: 1px solid var(--border-color); padding: 2rem; border-radius: 8px; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.75rem; background-color: var(--bg-dark); border: 1px solid var(--border-color); color: var(--text-light); }
+        .btn-submit { background-color: var(--accent-purple); color: white; padding: 0.75rem 2rem; border: none; }
+        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <header><div class="nav-container"><a href="#" class="logo">Nocturnal Gaming</a><nav><ul><li><a href="#games">Games</a></li><li><a href="privacy.php">Privacy</a></li><li><a href="terms.php">Terms</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
+    <div class="hero"><h1>Nocturnal Gaming</h1><p>"You're never alone with a game"</p></div>
+    <div class="container">
+        <section id="about">
+
+<h2>About Nocturnal Gaming</h2>
+
+<p>
+Nocturnal Gaming creates fun, challenging and addictive mobile games
+designed to be enjoyed anywhere, anytime.
+</p>
+
+<p>
+From endless challenges to competitive leaderboards, our goal is simple:
+create games that are easy to pick up but difficult to master.
+</p>
+
+</section>
+        <section id="games">
+
+<h2>Games</h2>
+
+<div class="games-grid">
+
+
+<!-- Copter Kid -->
+<div class="game-card">
+
+<img src="images/copterkid.png" alt="Copter Kid">
+
+<h3>Copter Kid</h3>
+
+<p>
+CopterKid is a classic game of balance and timing. You think you can fly?
+Don't be so sure about that!
+</p>
+
+<p>
+This bird's engine is broken, so you will find it's really difficult to climb up
+but so easy to fall down! If you thought Flappy Bird was hard, you haven't taken
+on CopterKid!
+</p>
+
+<p>
+Fly through the tunnel at break neck speeds trying to avoid obstacles while not
+folding and crashing into the walls of the cave!
+</p>
+
+<p>
+Only the brave can take on the CopterKid challenge. Can you make it up the ranks
+and claim the title of Sergeant?
+</p>
+
+<div class="instructions">
+
+<strong>Instructions</strong>
+
+<p>
+Tap the screen to climb up and let go to fall... Easy right?
+</p>
+
+</div>
+
+<a class="play-button" href="#">
+Google Play
+</a>
+
+</div>
+
+
+
+<!-- Every Second Counts -->
+<div class="game-card">
+
+<img src="images/everysecondcounts.png" alt="Every Second Counts">
+
+<h3>Every Second Counts</h3>
+
+<p>
+Every Second Counts is a fun, casual game where you try to beat your friends
+and others globally to reach the top.
+</p>
+
+<p>
+~~~~~~~~~~~~~~~~~
+</p>
+
+<p>
+Hold the Button down for as long as the timer says, sounds easy right?
+Wrong!
+</p>
+
+<p>
+Test yourself and your friends to see how good at time keeping you really are.
+</p>
+
+
+<div class="instructions">
+
+<strong>Instructions</strong>
+
+<p>
+Hold the button down and try to stop at exactly the right time.
+</p>
+
+</div>
+
+<a class="play-button" href="#">
+Google Play
+</a>
+
+</div>
+
+
+
+<!-- R.G.B -->
+<div class="game-card">
+
+<img src="images/rgb.png" alt="R.G.B">
+
+<h3>R.G.B</h3>
+
+<p>
+Aim of the Game?
+</p>
+
+<p>
+Get the highest score you can!
+</p>
+
+<p>
+Tap either left or right on the screen to change the blocks around, catch the
+right coloured circle in the same coloured square and score a point.
+</p>
+
+<p>
+Watch out... It gets trickier as you progress.
+</p>
+
+<p>
+Do you have what it takes to get in the Hall of Fame?
+</p>
+
+<p>
+Play R.G.B now exclusive to the Google Play Store.
+</p>
+
+<p>
+R.G.B is a game of pure frustration...
+Think you can become the master?
+</p>
+
+
+<div class="instructions">
+
+<strong>Instructions</strong>
+
+<p>
+Tap left or right to move the blocks and match the colours.
+</p>
+
+</div>
+
+<a class="play-button" href="#">
+Google Play
+</a>
+
+</div>
+
+
+</div>
+
+        <section id="contact">
+
+<h2>Contact</h2>
+
+<div class="contact-form">
+
+<form action="https://formsubmit.co/nocturnalgamin9@gmail.com" method="POST">
+
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" required>
+    </div>
+
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" required>
+    </div>
+    
+    <div class="form-group">
+    <label>Reason for contacting</label>
+
+    <select name="reason" required>
+        <option value="Bug Report">🐛 Bug Report</option>
+<option value="Game Feedback">🎮 Game Feedback</option>
+<option value="Feature Request">💡 Feature Request</option>
+<option value="Account / Cloud Save">☁️ Account / Cloud Save</option>
+<option value="Business Enquiry">💼 Business Enquiry</option>
+<option value="Other">Other</option>
+    </select>
+</div>
+
+
+    <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+    </div>
+
+
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="Nocturnal Gaming Contact Form">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+
+    <button class="btn-submit" type="submit">
+        Send Message
+    </button>
+
+</form>
+
+</div>
+
+</section>
+    </div>
+    <footer>
+    <p>
+        Copyright © 2026 Nocturnal Gaming |
+        <a href="privacy.php">Privacy Policy</a> |
+        <a href="terms.php">Terms of Service</a>
+    </p>
+</footer>
+</body>
+</html>
